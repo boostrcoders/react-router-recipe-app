@@ -105,6 +105,7 @@ button:focus {
 
 input[type="text"] {
   outline: none;
+  width: 50%;
 }
 
 input:-webkit-autofill {
@@ -116,7 +117,6 @@ input:-webkit-autofill {
 
 .active-recipe {
   margin: 0 auto;
-  width: 60%;
 }
 
 .active-recipe-img {
@@ -160,4 +160,11 @@ input:-webkit-autofill {
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+.loading-img {
+  background-color: rgba(0, 0, 0, 0);
+  height: 200px;
+  width: 200px;
+  margin: auto;
 }

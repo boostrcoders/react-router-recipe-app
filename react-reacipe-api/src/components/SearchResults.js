@@ -1,13 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const SearchResultsItems = ({ recipe }) => (
+  <Link to={`/recipe/${recipe.recipe_id}`}>
+    <button className="recipe-button">View Recipe </button>
+  </Link>
+);
+
 const SearchResults = props => {
   return (
     <div className="container">
       <div className="row">
         {props.recipes.map(recipe => {
           return (
-            <div key={recipe.recipe_id} className="col-md-4 col-sm-6 mb-2rem">
+            <div
+              key={recipe.recipe_id}
+              className="col-lg-4 col-md-6 col-sm-12 mb-2rem"
+            >
               <div className="recipes-box">
                 <img
                   className="recipes-box-img"
@@ -24,15 +33,7 @@ const SearchResults = props => {
                     Publisher: <span>{recipe.publisher}</span>
                   </p>
                 </div>
-
-                <Link
-                  to={{
-                    pathname: `/recipe/${recipe.recipe_id}`,
-                    state: { recipe: recipe.title }
-                  }}
-                >
-                  <button className="recipe-button">View Recipe</button>
-                </Link>
+                <SearchResultsItems recipe={recipe} />
               </div>
             </div>
           );
